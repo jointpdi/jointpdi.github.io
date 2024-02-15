@@ -869,7 +869,7 @@
               "color": "#000000"
             },
             ".mbr-text, .mbr-section-btn": {
-              "color": "#000000"
+              "color": "#edefeb"
             }
           },
           "_name": "header05",
