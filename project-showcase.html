@@ -47,25 +47,18 @@
       height: 100%;
       display: flex;
       flex-direction: column;
-      overflow: hidden;
     }
 
     .university-card {
       padding: 1.4rem;
     }
 
-    .project-card > a {
-      display: block;
-      width: 100%;
-      height: 220px;
-      background-color: #fff;
-    }
-
     .project-card img {
       width: 100%;
-      height: 100%;
+      height: 220px;
       object-fit: cover;
-      background-color: #fff;
+      border-top-left-radius: 16px;
+      border-top-right-radius: 16px;
     }
 
     .project-card-body {
@@ -75,22 +68,27 @@
       flex-direction: column;
     }
 
-    .project-card-title {
-      min-height: 8.5rem;
-    }
-
     .project-links a {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      min-height: 2.75rem;
+      display: inline-block;
       margin-right: 0.55rem;
       margin-top: 0.45rem;
     }
 
     .project-links {
       margin-top: auto;
-      min-height: 3.25rem;
+    }
+
+    .view-more-link {
+      color: #1b5eab;
+      display: inline-block;
+      font-weight: 600;
+      padding-bottom: 0.2rem;
+      text-decoration: none;
+      border-bottom: 2px solid currentColor;
+    }
+
+    .view-more-link:hover {
+      color: #144a86;
     }
   </style>
 </head>
@@ -141,49 +139,79 @@
     </div>
   </section>
 
+  <section data-bs-version="5.1" class="features4" id="cu-showcase">
+    <div class="container pb-5">
+      <div class="mbr-section-head mb-4">
+        <h2 class="mbr-section-title mbr-fonts-style align-center mb-2 display-5"><strong>University of Colorado Boulder (CU)</strong></h2>
+        <h3 class="mbr-section-subtitle mbr-fonts-style align-center mb-0 mt-2 display-7">Project team and presentations</h3>
+      </div>
+
+      <div class="row g-4">
+        <div class="col-12 col-md-6 col-lg-3">
+          <div class="project-card">
+            <img src="showcases/CU/CU_Archival%20Metadata%20Microgrant%20Team.jpg" alt="CU Archival Metadata Microgrant Team">
+            <div class="project-card-body">
+              <h4 class="mbr-fonts-style mb-2 display-7"><strong>Archival Metadata</strong></h4>
+              <div class="project-links">
+                <a class="btn btn-sm btn-primary display-7" href="showcases/CU/marigram_researchShowcase.pdf" target="_blank">View Presentation</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-12 col-md-6 col-lg-3">
+          <div class="project-card">
+            <img src="showcases/CU/CU_Comics%20Microgrant%20Team.jpg" alt="CU Comics Microgrant Team">
+            <div class="project-card-body">
+              <h4 class="mbr-fonts-style mb-2 display-7"><strong>Comics</strong></h4>
+              <div class="project-links">
+                <a class="btn btn-sm btn-primary display-7" href="showcases/CU/Presentation%20of%20Comics%20at%20CU%20Boulder%20January%202026.pdf" target="_blank">View Presentation</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-12 col-md-6 col-lg-3">
+          <div class="project-card">
+            <img src="showcases/CU/CU_Letterpress%20Microgrant%20Team.jpg" alt="CU Letterpress Microgrant Team">
+            <div class="project-card-body">
+              <h4 class="mbr-fonts-style mb-2 display-7"><strong>Letterpress</strong></h4>
+              <div class="project-links">
+                <a class="btn btn-sm btn-primary display-7" href="showcases/CU/letterpress-learning-showcase%20-%20Google%20Slides.pdf" target="_blank">View Presentation</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-12 col-md-6 col-lg-3">
+          <div class="project-card">
+            <img src="showcases/CU/CU_Materials%20Library%20Microgrant%20Team.jpg" alt="CU Materials Library Microgrant Team">
+            <div class="project-card-body">
+              <h4 class="mbr-fonts-style mb-2 display-7"><strong>Materials Library</strong></h4>
+              <div class="project-links">
+                <a class="btn btn-sm btn-primary display-7" href="showcases/CU/Material%20Library%20Presentation%20collab.pdf" target="_blank">View Presentation</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <section data-bs-version="5.1" class="features4" id="vt-showcase">
     <div class="container pb-5">
       <div class="mbr-section-head mb-4">
-        <h2 class="mbr-section-title mbr-fonts-style align-center mb-2 display-5"><strong>University Libraries, Virginia Tech</strong></h2>
+        <h2 class="mbr-section-title mbr-fonts-style align-center mb-2 display-5"><strong>Virginia Tech (VT)</strong></h2>
         <h3 class="mbr-section-subtitle mbr-fonts-style align-center mb-0 mt-2 display-7">Project team and presentations</h3>
       </div>
 
       <div class="row g-4 justify-content-center">
         <div class="col-12 col-md-6 col-lg-3">
           <div class="project-card">
-            <a href="slides/Designing_tools.pdf" target="_blank">
-              <img src="images/designing_tools.png" alt="Designing Tools to Enhance Best Practices in Research Software Engineering project preview">
-            </a>
+            <img src="images/Digital_Humanities.png" alt="Digital Humanities project preview">
             <div class="project-card-body">
-              <h4 class="project-card-title mbr-fonts-style mb-2 display-7"><strong>Designing Tools to<br>Enhance Best<br>Practices in<br>Research Software<br>Engineering</strong></h4>
-              <div class="project-links">
-                <a class="btn btn-sm btn-primary display-7" href="slides/Designing_tools.pdf" target="_blank">View Presentation</a>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-12 col-md-6 col-lg-3">
-          <div class="project-card">
-            <a href="slides/interactive_gene_expression_atlas.pdf" target="_blank">
-              <img src="images/interactive_gene_expression_atlas.png" alt="Interactive Gene Expression Atlas project preview">
-            </a>
-            <div class="project-card-body">
-              <h4 class="project-card-title mbr-fonts-style mb-2 display-7"><strong>Interactive Gene Expression Atlas</strong></h4>
-              <div class="project-links">
-                <a class="btn btn-sm btn-primary display-7" href="slides/interactive_gene_expression_atlas.pdf" target="_blank">View Presentation</a>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-12 col-md-6 col-lg-3">
-          <div class="project-card">
-            <a href="slides/Digital_Humanities.html" target="_blank">
-              <img src="images/Digital_Humanities.png" alt="Digital Humanities project preview">
-            </a>
-            <div class="project-card-body">
-              <h4 class="project-card-title mbr-fonts-style mb-2 display-7"><strong>Digital Humanities</strong></h4>
+              <!-- TODO: Confirm title against the official VT project list; derived from local filename. -->
+              <h4 class="mbr-fonts-style mb-2 display-7"><strong>Digital Humanities</strong></h4>
               <div class="project-links">
                 <a class="btn btn-sm btn-primary display-7" href="slides/Digital_Humanities.html" target="_blank">View Presentation</a>
               </div>
@@ -193,17 +221,43 @@
 
         <div class="col-12 col-md-6 col-lg-3">
           <div class="project-card">
-            <a href="slides/Scientific_Communication_%26_Foundational_Data_Analysis_Tools.pdf" target="_blank">
-              <img src="images/Scientific_Communication_%26_Foundational_Data_Analysis_Tools.png" alt="Scientific Communication and Foundational Data Analysis Tools project preview">
-            </a>
+            <img src="images/designing_tools.png" alt="Research Software Engineering Tools project preview">
             <div class="project-card-body">
-              <h4 class="project-card-title mbr-fonts-style mb-2 display-7"><strong>Scientific Communication &amp;<br>Foundational Data<br>Analysis Tools</strong></h4>
+              <h4 class="mbr-fonts-style mb-2 display-7"><strong>Research Software Engineering Tools</strong></h4>
               <div class="project-links">
-                <a class="btn btn-sm btn-primary display-7" href="slides/Scientific_Communication_%26_Foundational_Data_Analysis_Tools.pdf" target="_blank">View Presentation</a>
+                <a class="btn btn-sm btn-primary display-7" href="slides/Designing_tools.pdf" target="_blank">View Presentation</a>
               </div>
             </div>
           </div>
         </div>
+
+        <div class="col-12 col-md-6 col-lg-3">
+          <div class="project-card">
+            <img src="images/VTUL.png" alt="Digitization of Followership Collections project preview">
+            <div class="project-card-body">
+              <h4 class="mbr-fonts-style mb-2 display-7"><strong>Digitizing Followership Collections</strong></h4>
+              <div class="project-links">
+                <a class="btn btn-sm btn-primary display-7" href="slides/VTUL%20Collab%20Research%20Grant%20Final%20Report%20on%20Fo_Inga%20Haugen.pdf" target="_blank">View Presentation</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-12 col-md-6 col-lg-3">
+          <div class="project-card">
+            <img src="images/Chicago.png" alt="Chicago Covenants Project preview">
+            <div class="project-card-body">
+              <h4 class="mbr-fonts-style mb-2 display-7"><strong>Chicago Covenants Project</strong></h4>
+              <div class="project-links">
+                <a class="btn btn-sm btn-primary display-7" href="slides/Chicago%20Covenants%20--%20AHA_Dale%20Winling.pdf" target="_blank">View Presentation</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="align-center mt-4">
+        <a class="view-more-link display-7" href="vt-showcase.html">View More</a>
       </div>
     </div>
   </section>
