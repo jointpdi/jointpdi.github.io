@@ -1,42 +1,373 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="generator" content="Mobirise v5.9.13, mobirise.com">
   <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
   <link rel="shortcut icon" href="assets/images/jpdi-128x127.png" type="image/x-icon">
-  <meta name="description" content="Latest updates and highlights from Joint PDI participants.">
+  <meta name="description" content="Latest news, project updates, and microgrant research showcases from the Joint Professional Development Institute (Joint PDI).">
 
-  <title>News | Joint PDI</title>
-  <link rel="stylesheet" href="assets/web/assets/mobirise-icons2/mobirise2.css">
+  <title>News & Updates | Joint PDI</title>
+
+  <!-- Preconnect and Optimized Font Loading -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Core CSS -->
   <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
   <link rel="stylesheet" href="assets/bootstrap/css/bootstrap-grid.min.css">
-  <link rel="stylesheet" href="assets/bootstrap/css/bootstrap-reboot.min.css">
-  <link rel="stylesheet" href="assets/animatecss/animate.css">
   <link rel="stylesheet" href="assets/dropdown/css/style.css">
-  <link rel="stylesheet" href="assets/socicon/css/styles.css">
   <link rel="stylesheet" href="assets/theme/css/style.css">
-  <link rel="preload" href="https://fonts.googleapis.com/css?family=Inter+Tight:100,200,300,400,500,600,700,800,900,100i,200i,300i,400i,500i,600i,700i,800i,900i&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
-  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter+Tight:100,200,300,400,500,600,700,800,900,100i,200i,300i,400i,500i,600i,700i,800i,900i&display=swap"></noscript>
-  <link rel="preload" as="style" href="assets/mobirise/css/mbr-additional.css?v=GBGP4V"><link rel="stylesheet" href="assets/mobirise/css/mbr-additional.css?v=GBGP4V" type="text/css">
+  <link rel="stylesheet" href="assets/mobirise/css/mbr-additional.css?v=GBGP4V" type="text/css">
+
   <style>
-    .news-hero {
-      padding-top: 7rem;
-      padding-bottom: 2.5rem;
-      background: linear-gradient(180deg, rgba(16, 75, 145, 0.1) 0%, rgba(255, 255, 255, 1) 75%);
+    :root {
+      --jpdi-primary: #104b91;
+      --jpdi-primary-dark: #0a3568;
+      --jpdi-accent: #2b7a69;
+      --jpdi-bg-subtle: #f8fafc;
+      --jpdi-card-border: #e2e8f0;
+      --jpdi-text-muted: #64748b;
     }
 
-    .news-card {
-      background: #fff;
-      border: 1px solid #e7ebf1;
-      border-radius: 16px;
-      box-shadow: 0 8px 24px rgba(23, 30, 50, 0.06);
-      padding: 1.4rem;
+    body {
+      font-family: 'Inter Tight', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background-color: #fbfcfe;
+      color: #1e293b;
+    }
+
+    /* Active nav item indicator */
+    .navbar-dropdown .navbar-nav .nav-link.active-page {
+      color: var(--jpdi-primary) !important;
+      font-weight: 700;
+      position: relative;
+    }
+    .navbar-dropdown .navbar-nav .nav-link.active-page::after {
+      content: '';
+      position: absolute;
+      bottom: 0.2rem;
+      left: 1rem;
+      right: 1rem;
+      height: 2px;
+      background-color: var(--jpdi-primary);
+      border-radius: 2px;
+    }
+
+    /* Hero Section */
+    .news-header-section {
+      padding-top: 7.5rem;
+      padding-bottom: 2.75rem;
+      background: linear-gradient(180deg, rgba(16, 75, 145, 0.08) 0%, rgba(251, 252, 254, 1) 100%);
+      border-bottom: 1px solid #eef2f6;
+    }
+
+    .news-kicker {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      padding: 0.3rem 0.85rem;
+      font-size: 0.8rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--jpdi-primary);
+      background-color: rgba(16, 75, 145, 0.1);
+      border-radius: 999px;
+      margin-bottom: 0.85rem;
+    }
+
+    .news-main-title {
+      font-size: clamp(2rem, 4vw, 2.85rem);
+      font-weight: 800;
+      color: #0f172a;
+      line-height: 1.18;
+      letter-spacing: -0.02em;
+    }
+
+    .news-main-lead {
+      font-size: 1.15rem;
+      color: var(--jpdi-text-muted);
+      max-width: 720px;
+      margin: 0.75rem auto 0;
+      line-height: 1.6;
+    }
+
+    /* Filters */
+    .filter-bar {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 0.5rem;
+      margin-top: 1.75rem;
+    }
+
+    .filter-btn {
+      border: 1px solid #cbd5e1;
+      background: #ffffff;
+      color: #475569;
+      font-size: 0.88rem;
+      font-weight: 600;
+      padding: 0.4rem 0.95rem;
+      border-radius: 999px;
+      cursor: pointer;
+      transition: all 0.2s ease-in-out;
+    }
+
+    .filter-btn:hover {
+      background-color: #f1f5f9;
+      border-color: #94a3b8;
+      color: #0f172a;
+    }
+
+    .filter-btn.active {
+      background-color: var(--jpdi-primary);
+      border-color: var(--jpdi-primary);
+      color: #ffffff;
+      box-shadow: 0 2px 8px rgba(16, 75, 145, 0.25);
+    }
+
+    /* Featured Lead Card */
+    .featured-news-card {
+      background: #ffffff;
+      border: 1px solid var(--jpdi-card-border);
+      border-radius: 16px !important;
+      box-shadow: 0 10px 30px rgba(15, 23, 42, 0.05);
+      overflow: hidden;
+      margin-bottom: 2.5rem;
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+
+    .featured-news-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 18px 40px rgba(15, 23, 42, 0.09);
+    }
+
+    .featured-img-wrap {
+      position: relative;
+      min-height: 260px;
+      height: 100%;
+      background: #f1f5f9;
+    }
+
+    .featured-img-wrap img {
+      width: 100%;
+      height: 100%;
+      min-height: 260px;
+      object-fit: cover;
+      border-radius: 16px 0 0 16px !important;
+    }
+
+    @media (max-width: 991px) {
+      .featured-img-wrap img {
+        border-radius: 16px 16px 0 0 !important;
+        height: 240px;
+      }
+    }
+
+    .featured-body {
+      padding: 2rem 2.2rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    /* Meta Badges */
+    .badge-pill-custom {
+      display: inline-block;
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      padding: 0.25rem 0.65rem;
+      border-radius: 6px;
+      margin-right: 0.5rem;
+    }
+
+    .badge-showcase {
+      background-color: #e0f2fe;
+      color: #0369a1;
+    }
+
+    .badge-grant {
+      background-color: #fef3c7;
+      color: #92400e;
+    }
+
+    .badge-program {
+      background-color: #ecfdf5;
+      color: #047857;
+    }
+
+    .badge-community {
+      background-color: #f3e8ff;
+      color: #6b21a8;
+    }
+
+    .news-date {
+      font-size: 0.85rem;
+      color: var(--jpdi-text-muted);
+      font-weight: 500;
+    }
+
+    /* Standard News Cards */
+    .news-card-item {
+      background: #ffffff;
+      border: 1px solid var(--jpdi-card-border);
+      border-radius: 14px !important;
+      box-shadow: 0 4px 16px rgba(15, 23, 42, 0.04);
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+      transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+    }
+
+    .news-card-item:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 14px 28px rgba(15, 23, 42, 0.08);
+      border-color: #cbd5e1;
+    }
+
+    .news-card-thumb {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      border-radius: 14px 14px 0 0 !important;
+      background-color: #f8fafc;
+    }
+
+    .news-card-body {
+      padding: 1.25rem 1.35rem 1.35rem;
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+    }
+
+    .news-card-title {
+      font-size: 1.18rem;
+      font-weight: 700;
+      line-height: 1.35;
+      color: #0f172a;
+      margin-top: 0.65rem;
+      margin-bottom: 0.65rem;
+    }
+
+    .news-card-desc {
+      font-size: 0.94rem;
+      line-height: 1.55;
+      color: #475569;
+      margin-bottom: 1.15rem;
+      flex-grow: 1;
+    }
+
+    .news-card-footer {
+      margin-top: auto;
+      padding-top: 0.75rem;
+      border-top: 1px solid #f1f5f9;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .news-action-link {
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--jpdi-primary);
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      transition: color 0.15s ease;
+    }
+
+    .news-action-link:hover {
+      color: var(--jpdi-primary-dark);
+      text-decoration: underline;
+    }
+
+    /* Highlight list inside featured card */
+    .featured-highlights {
+      list-style: none;
+      padding-left: 0;
+      margin: 0.85rem 0 1.25rem;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 0.45rem;
+    }
+
+    .featured-highlights li {
+      font-size: 0.88rem;
+      color: #334155;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .featured-highlights li::before {
+      content: "•";
+      color: var(--jpdi-primary);
+      font-weight: bold;
+      font-size: 1.1rem;
+    }
+
+    /* Fixed Modern Footer */
+    .jpdi-modern-footer {
+      background-color: #0d1b2a;
+      color: #e2e8f0;
+      padding: 3.5rem 0 2rem;
+      margin-top: 4rem;
+      border-top: 3px solid var(--jpdi-primary);
+    }
+
+    .jpdi-modern-footer h5 {
+      color: #ffffff;
+      font-size: 1.1rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+    }
+
+    .jpdi-modern-footer p {
+      font-size: 0.9rem;
+      line-height: 1.6;
+      color: #94a3b8;
+    }
+
+    .jpdi-footer-nav {
+      list-style: none;
+      padding-left: 0;
+      margin: 0;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.25rem;
+    }
+
+    .jpdi-footer-nav a {
+      color: #cbd5e1;
+      text-decoration: none;
+      font-size: 0.95rem;
+      font-weight: 500;
+      transition: color 0.2s ease;
+    }
+
+    .jpdi-footer-nav a:hover {
+      color: #ffffff;
+      text-decoration: underline;
+    }
+
+    .jpdi-footer-bottom {
+      border-top: 1px solid #1e293b;
+      margin-top: 2rem;
+      padding-top: 1.5rem;
+      font-size: 0.82rem;
+      color: #64748b;
+      text-align: center;
     }
   </style>
 </head>
 <body>
+
+  <!-- Navigation -->
   <section data-bs-version="5.1" class="menu menu2 cid-tJS6tZXiPa" once="menu" id="menu02-news">
     <nav class="navbar navbar-dropdown navbar-fixed-top navbar-expand-lg">
       <div class="container">
@@ -46,7 +377,9 @@
               <img src="assets/images/jpdi-96x95.png" alt="Joint PDI logo" style="height: 3rem;">
             </a>
           </span>
-          <span class="navbar-caption-wrap"><a class="navbar-caption text-black text-primary display-4" href="index.html#header05-1">Joint PDI</a></span>
+          <span class="navbar-caption-wrap">
+            <a class="navbar-caption text-black text-primary display-4" href="index.html#header05-1">Joint PDI</a>
+          </span>
         </div>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-bs-toggle="collapse" data-target="#navbarSupportedContent" data-bs-target="#navbarSupportedContent" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
           <div class="hamburger">
@@ -61,60 +394,303 @@
             <li class="nav-item"><a class="nav-link link text-black text-primary display-4" href="index.html#header01-7">About</a></li>
             <li class="nav-item"><a class="nav-link link text-black text-primary display-4" href="index.html#features04-w" aria-expanded="false">Program</a></li>
             <li class="nav-item"><a class="nav-link link text-black text-primary display-4" href="project-showcase.html">Showcases</a></li>
-            <li class="nav-item"><a class="nav-link link text-black text-primary display-4" href="news.html">News</a></li>
+            <li class="nav-item"><a class="nav-link link text-black text-primary display-4 active-page" href="news.html">News</a></li>
             <li class="nav-item"><a class="nav-link link text-black text-primary display-4" href="https://forms.gle/Ew8s939y2Lqpd4m99" target="_blank">Contacts</a></li>
           </ul>
-          <div class="navbar-buttons mbr-section-btn"><a class="btn btn-primary display-4" href="https://forms.gle/Ew8s939y2Lqpd4m99" target="_blank">Join Us</a></div>
+          <div class="navbar-buttons mbr-section-btn">
+            <a class="btn btn-primary display-4" href="https://forms.gle/Ew8s939y2Lqpd4m99" target="_blank">Join Us</a>
+          </div>
         </div>
       </div>
     </nav>
   </section>
 
-  <section class="news-hero">
+  <!-- News Header Section -->
+  <section class="news-header-section">
     <div class="container">
-      <div class="row justify-content-center">
-        <div class="col-12 col-lg-8 text-center">
-          <p class="mbr-text mbr-fonts-style mb-0 mt-4 display-7">Updates from Joint PDI universities and project teams.</p>
+      <div class="text-center">
+        <div class="news-kicker">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M19 20H5a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v1m2 13a2 2 0 0 1-2-2V7m2 13a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z"/></svg>
+          Institute Newsroom
+        </div>
+        <h1 class="news-main-title">News &amp; Project Updates</h1>
+        <p class="news-main-lead">
+          Highlights, research findings, and microgrant showcase presentations from Joint Professional Development Institute partner universities.
+        </p>
+
+        <!-- Category Filter Controls -->
+        <div class="filter-bar">
+          <button type="button" class="filter-btn active" data-filter="all">All Updates</button>
+          <button type="button" class="filter-btn" data-filter="showcase">Showcases &amp; Research</button>
+          <button type="button" class="filter-btn" data-filter="grant">Grant Milestones</button>
+          <button type="button" class="filter-btn" data-filter="cu">CU Boulder</button>
+          <button type="button" class="filter-btn" data-filter="vt">Virginia Tech</button>
+          <button type="button" class="filter-btn" data-filter="community">Community</button>
         </div>
       </div>
     </div>
   </section>
 
-  <section data-bs-version="5.1" class="features4 pb-5" id="news-list">
-    <div class="container">
-      <div class="row justify-content-center">
-        <div class="col-12 col-lg-9">
-          <div class="news-card">
-            <h2 class="mbr-fonts-style mb-2 display-5"><strong>CU Microgrant Showcase Published</strong></h2>
-            <p class="mbr-text mbr-fonts-style mb-3 display-7">4 microgrant team showcases and supporting presentation decks from 2026.</p>
-            <div class="mbr-section-btn"><a class="btn btn-primary display-7" href="project-showcase.html#cu-showcase">View CU Projects</a></div>
+  <!-- News Content Section -->
+  <main class="container py-4">
+
+    <!-- Featured Lead Story -->
+    <div class="featured-news-card news-post-item" data-category="showcase cu">
+      <div class="row g-0">
+        <div class="col-12 col-lg-5">
+          <div class="featured-img-wrap">
+            <img src="showcases/CU/CU_Letterpress%20Microgrant%20Team.jpg" alt="CU Letterpress Microgrant Team Showcase" loading="eager" decoding="async">
+          </div>
+        </div>
+        <div class="col-12 col-lg-7">
+          <div class="featured-body">
+            <div class="d-flex align-items-center mb-2">
+              <span class="badge-pill-custom badge-showcase">Featured Showcase</span>
+              <span class="badge-pill-custom badge-program">CU Boulder</span>
+              <span class="news-date">Spring 2026</span>
+            </div>
+            <h2 class="h3 fw-bold text-dark mb-2">
+              CU Boulder Microgrant Showcase Presentations Published
+            </h2>
+            <p class="text-secondary mb-2" style="line-height: 1.6;">
+              Four interdisciplinary microgrant project teams at the University of Colorado Boulder have completed and published their collaborative research presentations, advancing scholarly work across specialized collections and library pedagogy:
+            </p>
+            <ul class="featured-highlights">
+              <li>Letterpress Learning Showcase</li>
+              <li>Comics Collections at CU Boulder</li>
+              <li>Materials Library Collaboration</li>
+              <li>Marigram Archival Metadata</li>
+            </ul>
+            <div class="pt-2">
+              <a href="project-showcase.html#cu-showcase" class="btn btn-primary px-4 py-2">
+                Explore CU Project Presentations &rarr;
+              </a>
+            </div>
           </div>
         </div>
       </div>
     </div>
-  </section>
 
-  <section data-bs-version="5.1" class="footer1 programm5 cid-tJS9NNcTLZ" once="footers" id="footer03-news">
+    <!-- News Grid -->
+    <div class="row g-4" id="news-grid">
+
+      <!-- Item 1: Virginia Tech Research Showcase -->
+      <div class="col-12 col-md-6 col-lg-4 news-post-item" data-category="showcase vt">
+        <div class="news-card-item">
+          <img src="assets/images/vertical-vt-full-color-rgb-1-740x311.png" alt="Virginia Tech Projects" class="news-card-thumb" style="object-fit: contain; padding: 1.5rem; background: #fafafa;" loading="lazy" decoding="async">
+          <div class="news-card-body">
+            <div class="d-flex align-items-center justify-content-between">
+              <div>
+                <span class="badge-pill-custom badge-showcase">Research Grants</span>
+                <span class="badge-pill-custom badge-program">Virginia Tech</span>
+              </div>
+              <span class="news-date">2023–2026</span>
+            </div>
+            <h3 class="news-card-title">VT Collaborative Research Portfolio Highlights Multi-Year Outcomes</h3>
+            <p class="news-card-desc">
+              Librarian-scholars and research teams at Virginia Tech have shared findings across digital humanities, public health yoga dissemination, food agency frameworks, and followership archives.
+            </p>
+            <div class="news-card-footer">
+              <span class="news-date">Multi-Project Reports</span>
+              <a href="project-showcase.html" class="news-action-link">
+                View Showcases &rarr;
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Item 2: IMLS Laura Bush Grant -->
+      <div class="col-12 col-md-6 col-lg-4 news-post-item" data-category="grant">
+        <div class="news-card-item">
+          <img src="assets/images/imls-1-328x127.png" alt="IMLS Grant Award" class="news-card-thumb" style="object-fit: contain; padding: 1.5rem; background: #ffffff;" loading="lazy" decoding="async">
+          <div class="news-card-body">
+            <div class="d-flex align-items-center justify-content-between">
+              <span class="badge-pill-custom badge-grant">Federal Grant</span>
+              <span class="news-date">Grant RE-254915-OLS-23</span>
+            </div>
+            <h3 class="news-card-title">IMLS Awards Joint PDI Grant to Cultivate Collaborative Scholars</h3>
+            <p class="news-card-desc">
+              Funded through the Institute of Museum and Library Services Laura Bush 21st Century Librarian Program, Joint PDI shifts academic librarians from support providers to research partners.
+            </p>
+            <div class="news-card-footer">
+              <span class="news-date">IMLS Funded</span>
+              <a href="https://imls.gov/grants/awarded/re-254915-ols-23" target="_blank" rel="noopener" class="news-action-link">
+                Grant Details &#8599;
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Item 3: Program Model -->
+      <div class="col-12 col-md-6 col-lg-4 news-post-item" data-category="program">
+        <div class="news-card-item">
+          <img src="assets/images/workshop-816x816.jpg" alt="Joint PDI Curriculum Model" class="news-card-thumb" loading="lazy" decoding="async">
+          <div class="news-card-body">
+            <div class="d-flex align-items-center justify-content-between">
+              <span class="badge-pill-custom badge-program">Program Model</span>
+              <span class="news-date">Three Pillars</span>
+            </div>
+            <h3 class="news-card-title">Workshops, Practicums, and Microgrants: The Joint PDI Pathway</h3>
+            <p class="news-card-desc">
+              The Joint PDI curriculum combines immersive collaborative research workshops, cross-institutional practicums, and microgrants to establish enduring scholarly partnerships.
+            </p>
+            <div class="news-card-footer">
+              <span class="news-date">Program Structure</span>
+              <a href="index.html#features04-w" class="news-action-link">
+                Learn More &rarr;
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Item 4: Comics Microgrant Highlight -->
+      <div class="col-12 col-md-6 col-lg-4 news-post-item" data-category="showcase cu">
+        <div class="news-card-item">
+          <img src="showcases/CU/CU_Comics%20Microgrant%20Team.jpg" alt="Comics Microgrant Project" class="news-card-thumb" loading="lazy" decoding="async">
+          <div class="news-card-body">
+            <div class="d-flex align-items-center justify-content-between">
+              <div>
+                <span class="badge-pill-custom badge-showcase">Microgrant</span>
+                <span class="badge-pill-custom badge-program">CU Boulder</span>
+              </div>
+              <span class="news-date">2026</span>
+            </div>
+            <h3 class="news-card-title">Representation of Comics in Academic Research and Curricula</h3>
+            <p class="news-card-desc">
+              The CU Boulder Comics microgrant team examined comic collections and pedagogical applications across diverse disciplines, releasing their final slide deck.
+            </p>
+            <div class="news-card-footer">
+              <span class="news-date">Slide Deck Available</span>
+              <a href="showcases/CU/Presentation%20of%20Comics%20at%20CU%20Boulder%20January%202026.pdf" target="_blank" class="news-action-link">
+                View Slides (PDF) &#8599;
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Item 5: Archival Metadata Project -->
+      <div class="col-12 col-md-6 col-lg-4 news-post-item" data-category="showcase cu">
+        <div class="news-card-item">
+          <img src="showcases/CU/CU_Archival%20Metadata%20Microgrant%20Team.jpg" alt="Archival Metadata Microgrant Team" class="news-card-thumb" loading="lazy" decoding="async">
+          <div class="news-card-body">
+            <div class="d-flex align-items-center justify-content-between">
+              <div>
+                <span class="badge-pill-custom badge-showcase">Microgrant</span>
+                <span class="badge-pill-custom badge-program">CU Boulder</span>
+              </div>
+              <span class="news-date">2026</span>
+            </div>
+            <h3 class="news-card-title">Marigram Archival Metadata Research Showcase</h3>
+            <p class="news-card-desc">
+              Investigating standardized metadata workflows and preservation for marigram archival collections, bridging archival practice and scientific data discovery.
+            </p>
+            <div class="news-card-footer">
+              <span class="news-date">Research Report</span>
+              <a href="showcases/CU/marigram_researchShowcase.pdf" target="_blank" class="news-action-link">
+                View Report (PDF) &#8599;
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Item 6: Call for Collaboration -->
+      <div class="col-12 col-md-6 col-lg-4 news-post-item" data-category="community">
+        <div class="news-card-item">
+          <img src="assets/images/mbr-376x212.jpg" alt="Join Joint PDI" class="news-card-thumb" loading="lazy" decoding="async">
+          <div class="news-card-body">
+            <div class="d-flex align-items-center justify-content-between">
+              <span class="badge-pill-custom badge-community">Opportunity</span>
+              <span class="news-date">Open Inquiry</span>
+            </div>
+            <h3 class="news-card-title">Partner with Joint PDI: Connect with the Collaborative Network</h3>
+            <p class="news-card-desc">
+              Interested in participating in future training institutes, adopting the collaborative scholar model, or connecting with partner universities? We welcome inquiries from library leaders and researchers.
+            </p>
+            <div class="news-card-footer">
+              <span class="news-date">Join Our Cohort</span>
+              <a href="https://forms.gle/Ew8s939y2Lqpd4m99" target="_blank" rel="noopener" class="news-action-link">
+                Contact Form &#8599;
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Modern Institutional Footer -->
+  <footer class="jpdi-modern-footer">
     <div class="container">
-      <div class="row">
-        <div class="row-links mb-4">
-          <ul class="header-menu">
-            <li class="header-menu-item mbr-fonts-style display-5"><a href="index.html#header01-7" class="text-danger">About</a></li>
-            <li class="header-menu-item mbr-fonts-style display-5"><a href="index.html#features04-w" class="text-danger text-primary">Program</a></li>
-            <li class="header-menu-item mbr-fonts-style display-5"><a href="project-showcase.html" class="text-danger text-primary">Showcases</a></li>
-            <li class="header-menu-item mbr-fonts-style display-5"><a href="news.html" class="text-danger text-primary">News</a></li>
-            <li class="header-menu-item mbr-fonts-style display-5"><a href="https://forms.gle/Ew8s939y2Lqpd4m99" class="text-danger text-primary">Contacts</a></li>
+      <div class="row g-4">
+        <div class="col-12 col-lg-5">
+          <h5>Joint Professional Development Institute (Joint PDI)</h5>
+          <p class="mb-2">
+            Cultivating collaborative library scholars to shift academic libraries from service providers to equal research leaders and disciplinary partners.
+          </p>
+          <p class="mb-0" style="color: #64748b; font-size: 0.82rem;">
+            Supported by the Institute of Museum and Library Services (IMLS), Grant Award RE-254915-OLS-23.
+          </p>
+        </div>
+        <div class="col-12 col-md-6 col-lg-3">
+          <h5>Partner Universities</h5>
+          <p class="mb-1">Virginia Tech (VT)</p>
+          <p class="mb-1">University of Colorado Boulder (CU)</p>
+          <p class="mb-1">University of North Texas (UNT)</p>
+          <p class="mb-0">University of California Riverside (UCR)</p>
+        </div>
+        <div class="col-12 col-md-6 col-lg-4">
+          <h5>Quick Navigation</h5>
+          <ul class="jpdi-footer-nav flex-column gap-2 mb-3">
+            <li><a href="index.html#header01-7">About the Initiative</a></li>
+            <li><a href="index.html#features04-w">Program Framework</a></li>
+            <li><a href="project-showcase.html">Project Showcases</a></li>
+            <li><a href="news.html">News &amp; Updates</a></li>
+            <li><a href="https://forms.gle/Ew8s939y2Lqpd4m99" target="_blank">Contact &amp; Join Us</a></li>
           </ul>
         </div>
       </div>
+      <div class="jpdi-footer-bottom">
+        &copy; Joint PDI &bull; Joint Professional Development Institute &bull; All rights reserved.
+      </div>
     </div>
-  </section>
+  </footer>
 
+  <!-- Scripts -->
   <script src="assets/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="assets/smoothscroll/smooth-scroll.js"></script>
-  <script src="assets/ytplayer/index.js"></script>
   <script src="assets/dropdown/js/navbar-dropdown.js"></script>
-  <script src="assets/theme/js/script.js"></script>
-  <input name="animation" type="hidden">
+
+  <!-- Interactive News Filter Script -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const filterBtns = document.querySelectorAll('.filter-btn');
+      const newsItems = document.querySelectorAll('.news-post-item');
+
+      filterBtns.forEach(btn => {
+        btn.addEventListener('click', function () {
+          const filter = this.getAttribute('data-filter');
+
+          // Update active button state
+          filterBtns.forEach(b => b.classList.remove('active'));
+          this.classList.add('active');
+
+          // Filter news items
+          newsItems.forEach(item => {
+            const categories = item.getAttribute('data-category') || '';
+            if (filter === 'all' || categories.split(' ').includes(filter)) {
+              item.style.display = '';
+            } else {
+              item.style.display = 'none';
+            }
+          });
+        });
+      });
+    });
+  </script>
 </body>
 </html>
