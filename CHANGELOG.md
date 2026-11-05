@@ -3,7 +3,7 @@
 ## 2026-11-05
 
 - Showcases: now a simple list of Level 2 projects by library and round, with slides where shared; no cover images.
-- Showcases: Virginia Tech lists all 25 Joint PDI projects (Winter 2024, Summer 2024, Summer 2026), with official titles and names; earlier pilot projects link to the Virginia Tech archive.
+- Showcases: Virginia Tech lists all 25 Joint PDI projects (Summer 2024, Winter 2024, Summer 2026), with official titles and names; earlier pilot projects link to the Virginia Tech archive.
 - Showcases: added a UNT section; corrected the May 2026 news item to match.
 - News: added the IMLS reinstatement and extension of the project to July 31, 2027.
 - News: added the 2026 Level 2 and Level 3 awards at Virginia Tech, UNT, and CU Boulder.
