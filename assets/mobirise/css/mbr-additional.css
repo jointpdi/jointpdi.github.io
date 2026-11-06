@@ -1333,9 +1333,9 @@ a {
   }
 }
 .cid-tJS6uM4N87 {
-  padding-top: 12rem;
-  padding-bottom: 0rem;
-  background-color: #edefeb;
+  padding-top: 10.5rem;
+  padding-bottom: 5rem;
+  background: linear-gradient(135deg, #1e564a 0%, #2b7a69 100%);
 }
 .cid-tJS6uM4N87 .mbr-fallback-image.disabled {
   display: none;
@@ -1350,19 +1350,14 @@ a {
   bottom: 0;
 }
 .cid-tJS6uM4N87 .topbg {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 30%;
-  background: #2b7a69;
+  display: none;
 }
 .cid-tJS6uM4N87 .mbr-section-title {
-  color: #000000;
+  color: #ffffff;
 }
 .cid-tJS6uM4N87 .mbr-text,
 .cid-tJS6uM4N87 .mbr-section-btn {
-  color: #edefeb;
+  color: #e6f2ef;
 }
 .cid-u5BIGED6AM {
   padding-top: 2rem;
