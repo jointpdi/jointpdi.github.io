@@ -2,6 +2,7 @@
 
 ## 2026-11-05
 
+- Showcases: linked the progress summary from "Step Into History".
 - Showcases: linked the progress summary from "Reviving Solitude".
 - Showcases: linked the James A. Emanuel Project website from "A Poet in Exile".
 - Showcases: now a simple list of Level 2 projects by library and round, with slides where shared; no cover images.
