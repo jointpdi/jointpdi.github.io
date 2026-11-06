@@ -1,5 +1,9 @@
 # Changelog
 
+## 2026-11-06
+
+- Showcases: linked the CRISPR Communication slides and added Jessica Spence and Cozette Comer to its team.
+
 ## 2026-11-05
 
 - Showcases: linked the progress summary from "Step Into History".
