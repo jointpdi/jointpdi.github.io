@@ -2,6 +2,7 @@
 
 ## 2026-11-05
 
+- Showcases: linked the progress summary from "Reviving Solitude".
 - Showcases: linked the James A. Emanuel Project website from "A Poet in Exile".
 - Showcases: now a simple list of Level 2 projects by library and round, with slides where shared; no cover images.
 - Showcases: Virginia Tech lists all 25 Joint PDI projects (Summer 2024, Winter 2024, Summer 2026), with official titles and names; earlier pilot projects link to the Virginia Tech archive.
